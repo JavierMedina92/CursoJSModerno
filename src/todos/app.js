@@ -16,12 +16,11 @@ const ElementIDs = {
 export const App = ( elementId ) => {
 
     const displayTodos = () => {
-        const todos = todoStore.getTodos( todoStore.getCurrentFilter() );
+        const todos = todoStore.getTodos( todoStore.getCurrentFilter());
         renderTodos( ElementIDs.TodoList, todos );
     }
 
-// Cuando la función App() se llama
-( () => {
+(() => {
     const app = document.createElement('div');
     app.innerHTML = html;
     document.querySelector(elementId).append( app );
