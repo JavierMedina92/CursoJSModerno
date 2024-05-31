@@ -76,6 +76,11 @@ const deleteCompleted = () => {
     state.todos = state.todos.filter( todo => todo.done );
 }
 
+const deleteTodo = ( todoId ) => {
+    state.todos = state.todos.filter( todo => todo.id !== todoId  );
+    saveStateToLocalStorage();
+}
+
 /**
  * 
  * @param {Filtersz¿} newFilter 
@@ -91,11 +96,11 @@ const getCurrentFilter = () => {
 
 export default {
     addTodo,
+    deleteCompleted,
     initStore,
     loadStore,
     getTodos,
     toggleTodo,
-    deleteCompleted,
     setFilter,
     getCurrentFilter,
 }
